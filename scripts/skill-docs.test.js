@@ -47,4 +47,6 @@ test("repository docs advertise the hwp skill", () => {
   assert.match(install, /--skill hwp/);
   assert.match(featureDoc, /--include-images/);
   assert.match(featureDoc, /(data:|base64)/);
+  assert.match(featureDoc, /Markdown 출력.*(data:|base64)/);
+  assert.doesNotMatch(featureDoc, /Markdown 출력.*이미지 (파일 )?경로 생성 여부 확인/);
 });

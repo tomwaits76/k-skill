@@ -76,6 +76,16 @@ hwpjs extract-images document.hwp -o ./images
 hwpjs batch ./documents -o ./output --format json --recursive
 ```
 
+## 결과 확인 포인트
+
+- JSON 출력: 파일 생성 여부와 최상위 구조를 확인한다.
+- Markdown 출력: `--include-images` 를 썼다면 이미지 파일 경로가 따로 생기지 않아도 정상이며, Markdown 안 `data:` URI / base64 인라인 포함 여부를 확인한다.
+- HTML 출력: 파일 생성 뒤 브라우저에서 열리는지 확인한다.
+- 이미지 추출: 출력 디렉터리에 실제 이미지 파일이 생겼는지 확인한다.
+- 배치 처리: 입력 개수와 출력 개수가 크게 어긋나지 않는지 확인한다.
+
+이미지를 별도 파일로 떨궈야 한다면 `--include-images` 대신 `--images-dir` 경로를 쓴다.
+
 ## 직접 제어가 필요한 경우
 
 `hwp-mcp`는 Windows + 한글 프로그램 설치 환경에서만 고려한다.
